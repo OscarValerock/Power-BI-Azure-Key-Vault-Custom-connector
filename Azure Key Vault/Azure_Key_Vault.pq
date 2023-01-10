@@ -1,8 +1,9 @@
 ﻿// This file contains your Data Connector logic
 section Azure_Key_Vault;
 
+
 [DataSource.Kind="Azure_Key_Vault", Publish="Azure_Key_Vault.Publish"]
-shared Azure_Key_Vault.Contents = (vaultBaseUrl as text) =>
+shared Azure_Key_Vault.Secrets = (vaultBaseUrl as text) =>
     let
         Source = Json.Document(
             Web.Contents(
@@ -25,6 +26,7 @@ shared Azure_Key_Vault.Contents = (vaultBaseUrl as text) =>
 
 // Data Source Kind description
 Azure_Key_Vault = [
+    TestConnection = (dataSourcePath) => {"Azure_Key_Vault.Secrets", dataSourcePath},
     Authentication = [
         Aad = [
             AuthorizationUri = "https://login.microsoftonline.com/common/oauth2/authorize",
