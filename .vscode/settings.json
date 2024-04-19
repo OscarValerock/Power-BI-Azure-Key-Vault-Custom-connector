@@ -1,0 +1,5 @@
+{
+    "powerquery.general.mode": "SDK",
+    "powerquery.sdk.defaultExtension": "${workspaceFolder}\\bin\\AnyCPU\\Debug\\Azure Key Vault.mez",
+    "powerquery.sdk.defaultQueryFile": "${workspaceFolder}\\Azure_Key_Vault.query.pq"
+}
